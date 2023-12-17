@@ -70,11 +70,11 @@ dmon="$(vnstat -m | grep `date +%G-%m` | awk '{print $2" "substr ($3, 1 ,3)}')"
 umon="$(vnstat -m | grep `date +%G-%m` | awk '{print $5" "substr ($6, 1 ,3)}')"
 tmon="$(vnstat -m | grep `date +%G-%m` | awk '{print $8" "substr ($9, 1 ,3)}')"
 domain=$(cat /usr/local/etc/xray/domain)
-ISP=$(cat /usr/local/etc/xray/org)
 CITY=$(cat /usr/local/etc/xray/city)
 WKT=$(cat /usr/local/etc/xray/timezone)
 DATE=$(date -R | cut -d " " -f -4)
-MYIP=$(curl -sS ipv4.icanhazip.com)
+IPVPS=$(curl -s ipinfo.io/ip )
+ISPVPS=$( curl -s ipinfo.io/org )
 clear
 
 export MYIP=$( curl -s https://ipinfo.io/ip/ )
@@ -89,7 +89,7 @@ echo -e " ${BIRed}Service Provider${NC} ${BIGreen}: $ISP"
 echo -e " ${BIRed}Timezone${NC}         ${BIGreen}: $WKT${NC}"
 echo -e " ${BIRed}City${NC}             ${BIGreen}: $CITY${NC}"
 echo -e " ${BIRed}Date${NC}             ${BIGreen}: $DATE${NC}"
-echo -e " ${BIRed}Domain${NC}           ${BIGreen}: $domain${NC}"
+echo -e " ${BIRed}Domain${NC}           ${BIGreen}: $(cat /etc/xray/domain){NC}"
 echo -e "${BIBlue}————————————————————————————————————————————————————————${NC}"
 echo -e "     ${BIGreen}NGINX STATUS :${NC} $status_nginx    ${BIGreen}XRAY STATUS :${NC} $status_xray   "
 echo -e "${BIBlue}————————————————————————————————————————————————————————${NC}"
