@@ -27,7 +27,7 @@ wget -q -O /usr/bin/changer "https://raw.githubusercontent.com/gigclone/xray/mai
 wget -q -O /usr/bin/clear-log "https://raw.githubusercontent.com/gigclone/xray/main/other/clear-log.sh"
 wget -q -O /usr/bin/dns "https://raw.githubusercontent.com/gigclone/xray/main/other/dns.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/gigclone/xray/main/other/xp.sh"
-
+wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/gigclone/xray/main/speedtes_cli.py"
 
 
 
@@ -57,3 +57,4 @@ chmod +x /usr/bin/changer
 chmod +x /usr/bin/clear-log
 chmod +x /usr/bin/dns
 chmod +x /usr/bin/xp
+chmod +x /usr/bin/speedtest
